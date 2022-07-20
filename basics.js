@@ -92,12 +92,40 @@ function myFunction(a, b) {
 // Write a function that takes a number (a) as argument
 // Round a to the 2nd digit after the comma
 // Return the rounded number
-function
-myFunction
-(
-a
-)
-{
-
-return Number(a.toFixed(2))
+function myFunction(a) {
+  return Number(a.toFixed(2));
+}
+// Write a function that takes two numbers (a and b) as argument
+// Return b percent of a
+function myFunction(a, b) {
+  return (b / 100) * a;
+}
+// Write a function that takes two numbers, say x and y, as arguments
+// Check if x is divisible by y
+// If yes, return x
+// If not, return the next higher natural number that is divisible by y
+function myFunction(x, y) {
+  while (x % y !== 0) {
+    x++;
+  }
+  return x;
+}
+// Write a function that takes a string as argument
+// As it is, the string has no meaning
+// Increment each letter to the next letter in the alphabet
+// Return the correct word
+function myFunction(str) {
+  let arr = [...str];
+  let correct = arr.map((e) => String.fromCharCode(e.charCodeAt() + 1)); //every e in arr is first converted in to Unicode its is added by 1
+  return correct.join(""); //String.fromCharCode()converts unicode to string and it is mapped in arr and finally returned by join
+}
+// It seems like something happened to these strings
+// Can you figure out how to clear up the chaos?
+// Write a function that joins these strings together such that they form the following words:
+// 'Javascript', 'Countryside', and 'Downtown'
+// You might want to apply basic JS string methods such as replace(), split(), slice() etc
+//myFunction('java', 'tpi%rcs') Expected:'Javascript'
+function myFunction(a, b) {
+  let arr = a.concat(b.split("").reverse().join("")).replace("%", "");
+  return arr[0].toUpperCase() + arr.slice(1);
 }
