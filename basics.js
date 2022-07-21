@@ -129,3 +129,41 @@ function myFunction(a, b) {
   let arr = a.concat(b.split("").reverse().join("")).replace("%", "");
   return arr[0].toUpperCase() + arr.slice(1);
 }
+// Write a function that takes 6 values (a,b,c,d,e,f) as arguments
+// Sum a and b
+// Then substract by c
+// Then multiply by d and divide by e
+// Finally raise to the power of f and return the result
+// Tipp: mind the order
+function myFunction(a, b, c, d, e, f) {
+  return (((a + b - c) * d) / e) ** f;
+}
+// Write a function that takes two strings (a and b) as arguments
+// Beginning at the end of 'a', insert 'b' after every 3rd character of 'a'
+// Return the resulting string
+function myFunction(a, b) {
+  let resultStr = "";
+  let index = 0;
+  for (let i = a.length - 1; i > -1; i--) {
+    index++;
+    resultStr = a[i] + resultStr;
+    if (index % 3 === 0) {
+      resultStr = b + resultStr;
+    }
+  }
+  return resultStr;
+}
+// This challenge is a little bit more complex
+// Write a function that takes a number (a) as argument
+// If a is prime, return a
+// If not, return the next higher prime number
+function myFunction(a) {
+  const isPrime = (num) => {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return num > 1;
+  };
+  while (!isPrime(a)) a++;
+  return a;
+}
